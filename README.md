@@ -7,9 +7,9 @@ An elegant, privacy-first, client-side sleep tracker and routine optimizer. It f
 
 ---
 
-| Main Dashboard View | Multi-Calendar Grid |
-| :---: | :---: |
-| <img src="assets/screenshot_collage.png" width="100%" alt="Dashboard"/> |
+## 🎨 Visual Preview
+
+![RestRoutine Dashboard](assets/screenshot_collage.png)
 
 ---
 
