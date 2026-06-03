@@ -2,7 +2,7 @@
 
 Sleep matters! both its duration and its timing.
 
-RestRoutine is a clean, privacy-focused, client-side sleep tracker and routine optimizer. It features multi-calendar support (Gregorian, Shamsi, and Hijri), habit logging, mood mapping, and a custom sleep-scoring calculator.
+RestRoutine is an elegant client-side sleep tracker and routine optimizer. It features multi-calendar support (Gregorian, Shamsi, and Hijri), habit logging, mood mapping, and a custom sleep-scoring calculator.
 
 [![Live Demo](https://img.shields.io/badge/demo-online-success.svg?style=for-the-badge)](https://arashfarzaneh.github.io/RestRoutine/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
