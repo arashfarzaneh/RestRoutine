@@ -7,6 +7,12 @@ An elegant, privacy-first, client-side sleep tracker and routine optimizer. It f
 
 ---
 
+| Main Dashboard View | Multi-Calendar Grid |
+| :---: | :---: |
+| <img src="assets/screenshot_main_page.png" width="100%" alt="Dashboard"/> | <img src="assets/screenshot_calendar.png" width="100%" alt="Calendar"/> |
+
+---
+
 ## 🚀 Live Demonstration
 
 Experience the app instantly inside your browser with zero configurations required:
