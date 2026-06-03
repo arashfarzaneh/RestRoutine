@@ -1,6 +1,6 @@
 # 🌙 RestRoutine
 
-An elegant, privacy-first, client-side sleep tracker and routine optimizer. It features multi-calendar support (Gregorian, Shamsi, and Hijri), custom routine logging, morning mood mapping, and an intelligent dynamic sleep-scoring engine.
+Sleep matters—both how long you sleep and when you sleep. RestRoutine is a clean, privacy-focused, client-side sleep tracker and routine optimizer. It features multi-calendar support (Gregorian, Shamsi, and Hijri), habit logging, mood mapping, and a custom sleep-scoring calculator.
 
 [![Live Demo](https://img.shields.io/badge/demo-online-success.svg?style=for-the-badge)](https://arashfarzaneh.github.io/RestRoutine/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
@@ -15,46 +15,36 @@ An elegant, privacy-first, client-side sleep tracker and routine optimizer. It f
 
 ## 🚀 Live Demonstration
 
-Experience the app instantly inside your browser with zero configurations required:
+Try the application directly in your browser with zero setup required:
 👉 **[Launch RestRoutine Live Demo](https://arashfarzaneh.github.io/RestRoutine/)**
 
 ---
 
 ## ✨ Key Features
 
-* **Intelligent Sleep Scoring:** Evaluates your night using a dynamic algorithm combining absolute sleep duration ($70\%$) and precise sleep window timings ($30\%$).
-* **Multi-Calendar Ecosystem:** Seamlessly toggle views and record timestamps natively across **Gregorian**, **Shamsi (Jalaali)**, and **Tabular Hijri** calendar systems.
-* **Routine Correlation Tracker:** Log granular custom daily habits (Completed `✓`, Partial `~`, Failed `✕`) to visually map how routines influence rest.
-* **Visual Time-blocking:** Renders a responsive linear hourly timeline tracking card for an immediate macro-overview of your biological rhythm.
-* **Complete Data Sovereignty:** 100% serverless. Your data stays in your browser via `localStorage` with native `.json` backup export and restore mechanisms.
-
----
-
-## 🎨 Visual Preview
-
-> 💡 *Tip: Take 2 or 3 screenshots of your application (the main timeline dashboard, the multi-calendar layout, and the modal view) and place them in an assets folder to display here!*
-
-| Main Dashboard View | Multi-Calendar Grid |
-| :---: | :---: |
-| <img src="https://via.placeholder.com/400x250.png?text=Main+Dashboard+Screenshot" width="100%" alt="Dashboard"/> | <img src="https://via.placeholder.com/400x250.png?text=Calendar+Grid+Screenshot" width="100%" alt="Calendar"/> |
+* **Data-Driven Sleep Scoring:** Rates your sleep using an algorithm that factors in both total duration ($70\%$) and the consistency of your sleep window timings ($30\%$).
+* **Multi-Calendar Support:** Seamlessly switch views and record data natively using **Gregorian**, **Shamsi (Jalaali)**, or **Tabular Hijri** calendar systems.
+* **Routine & Habit Tracker:** Log daily routines (Completed `✓`, Partial `~`, Failed `✕`) to visually correlate how your daytime habits impact your rest.
+* **Visual Time-blocking:** Displays an hourly timeline tracking card for every entry to give you an immediate visual overview of your sleep patterns.
+* **Local Privacy:** 100% client-side. Your data never leaves your browser; it is stored securely via `localStorage` and includes simple `.json` export/import tools for backups.
 
 ---
 
 ## 🏗️ Architecture & Codebase Structure
 
-The project relies on decoupled vanilla modules encapsulated cleanly inside a unified global namespace (`window.SleepApp`).
+The project is built using decoupled vanilla JavaScript modules organized under a single global namespace (`window.SleepApp`).
 
 ```text
 .
 ├── css
-│   └── style.css          # Modern iOS-inspired custom variable theme sheet
-├── index.html             # Semantic layout component structure 
+│   └── style.css          # Modern, clean variable-based stylesheet
+├── index.html             # Semantic HTML5 layout structure 
 ├── js
-│   ├── app.js             # Core bootstrap event bindings and view controllers
-│   ├── calendar.js        # Matrix grid UI renderer for monthly views
-│   ├── modal.js           # Input form, field validators, and preview states
-│   ├── scoring.js         # Math mathematical algorithm metrics for sleep quality
-│   ├── storage.js         # Abstracted HTML5 LocalStorage interface pipeline
-│   └── timeline.js        # Core engine generating linear structural tracks
+│   ├── app.js             # Application initialization, event listeners, and main views
+│   ├── calendar.js        # Monthly grid renderer and navigation logic
+│   ├── modal.js           # Form inputs, field validation, and entry details
+│   ├── scoring.js         # Scoring math and duration calculation utilities
+│   ├── storage.js         # Interface for HTML5 LocalStorage and data backups
+│   └── timeline.js        # Renders the visual hourly timeline blocks
 └── lib
-    └── jalaali.js         # Low-level algorithm layer converting Jalaali calendars
+    └── jalaali.js         # Calendar conversion algorithm utility
