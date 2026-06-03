@@ -63,6 +63,13 @@ window.SleepApp = window.SleepApp || {};
       var menu = document.getElementById('settingsMenu');
       menu.classList.toggle('hidden');
     });
+    document.getElementById('darkModeToggle').addEventListener('change', function () {
+      var settings = SleepApp.Storage.getSettings();
+      settings.darkMode = this.checked;
+      SleepApp.Storage.saveSettings(settings);
+      applyTheme(settings.darkMode);
+    });
+
     document.getElementById('calendarToggle').addEventListener('change', function () {
       var settings = SleepApp.Storage.getSettings();
       settings.calendar = this.value;
@@ -133,8 +140,14 @@ window.SleepApp = window.SleepApp || {};
       }
     });
 
+    applyTheme(SleepApp.Storage.getSettings().darkMode);
+    document.getElementById('darkModeToggle').checked = !!SleepApp.Storage.getSettings().darkMode;
     updateCalendarToggleUI();
     renderMainView();
+  }
+
+  function applyTheme(dark) {
+    document.documentElement.classList.toggle('dark', !!dark);
   }
 
   function updateCalendarToggleUI() {

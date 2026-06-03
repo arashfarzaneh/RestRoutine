@@ -36,6 +36,33 @@
   --transition: 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
+.dark {
+  --bg: #0f0f12;
+  --card-bg: #1c1c20;
+  --card-border: rgba(255, 255, 255, 0.06);
+  --text-primary: #f2f2f7;
+  --text-secondary: #98989e;
+  --text-tertiary: #636366;
+  --accent: #7b7af7;
+  --accent-hover: #9392ff;
+  --accent-light: rgba(123, 122, 247, 0.15);
+  --danger: #ff453a;
+  --danger-light: rgba(255, 69, 58, 0.15);
+  --success: #30d158;
+  --success-light: rgba(48, 209, 88, 0.15);
+  --warning: #ff9f0a;
+  --warning-light: rgba(255, 159, 10, 0.15);
+  --input-bg: #2c2c30;
+  --input-border: #38383a;
+  --timeline-bg: #2c2c30;
+  --timeline-label: #636366;
+  --modal-overlay: rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.2), 0 1px 1px rgba(0,0,0,0.15);
+  --shadow: 0 1px 3px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.35);
+  --shadow-xl: 0 12px 40px rgba(0,0,0,0.45);
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   background: var(--bg);
@@ -191,6 +218,42 @@ body {
 
 .settings-danger button:hover {
   background: #fee;
+}
+
+.settings-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.settings-checkbox::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text-tertiary);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.settings-checkbox:checked {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.settings-checkbox:checked::after {
+  transform: translateX(16px);
+  background: #fff;
 }
 
 .settings-divider {
