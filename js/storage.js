@@ -92,7 +92,7 @@ window.SleepApp = window.SleepApp || {};
   function getSettings() {
     try {
       var data = localStorage.getItem(SETTINGS_KEY);
-      return data ? JSON.parse(data) : { calendar: 'shamsi' };
+      return data ? JSON.parse(data) : { calendar: 'gregorian' };
     } catch (e) {
       return { calendar: 'shamsi' };
     }

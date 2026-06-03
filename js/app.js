@@ -4,11 +4,42 @@ window.SleepApp = window.SleepApp || {};
   var EXPAND_COUNT = 6;
   var expanded = false;
 
+  function seedSampleEntries() {
+    var samples = [
+      { date: '', sleepStart: '22:30', sleepEnd: '06:00', mood: 'energetic', notes: '' },
+      { date: '', sleepStart: '03:00', sleepEnd: '07:00', mood: 'tired', notes: '' },
+      { date: '', sleepStart: '23:30', sleepEnd: '07:30', mood: 'calm', notes: '' },
+      { date: '', sleepStart: '02:00', sleepEnd: '11:00', mood: 'sad', notes: '' },
+      { date: '', sleepStart: '23:00', sleepEnd: '07:00', mood: 'awesome', notes: '📝 Sample entry — start tracking by tapping + below' }
+    ];
+    var today = SleepApp.Calendars.todayIn('shamsi');
+    for (var i = 0; i < samples.length; i++) {
+      var d = SleepApp.Calendars.addDays(
+        today.year + '-' + String(today.month).padStart(2, '0') + '-' + String(today.day).padStart(2, '0'),
+        i - samples.length + 1,
+        'shamsi'
+      );
+      samples[i].date = d;
+      var quality = SleepApp.Scoring.calculate(samples[i].sleepStart, samples[i].sleepEnd);
+      samples[i].duration = quality.duration;
+      samples[i].score = quality.score;
+      samples[i].color = quality.color;
+      SleepApp.Storage.add(samples[i]);
+    }
+  }
+
   function init() {
     SleepApp.Modal.init();
     SleepApp.Calendar.init();
 
+    if (SleepApp.Storage.getAll().length === 0) {
+      seedSampleEntries();
+    }
+
     document.getElementById('fab').addEventListener('click', function () {
+      SleepApp.Modal.openAdd();
+    });
+    document.getElementById('addEntryHeaderBtn').addEventListener('click', function () {
       SleepApp.Modal.openAdd();
     });
     document.getElementById('homeBtn').addEventListener('click', function () {
@@ -37,6 +68,8 @@ window.SleepApp = window.SleepApp || {};
       settings.calendar = this.value;
       SleepApp.Storage.saveSettings(settings);
       updateCalendarToggleUI();
+      var calViewSel = document.getElementById('calViewCalendarToggle');
+      if (calViewSel) calViewSel.value = this.value;
       SleepApp.Calendar.init();
       var calendarView = document.getElementById('calendarView');
       if (!calendarView.classList.contains('hidden')) {

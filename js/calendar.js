@@ -42,9 +42,17 @@ window.SleepApp = window.SleepApp || {};
     document.getElementById('backFromCalendarBtn').addEventListener('click', function () {
       SleepApp.App.showMain();
     });
+    document.getElementById('calViewCalendarToggle').addEventListener('change', function () {
+      var settings = SleepApp.Storage.getSettings();
+      settings.calendar = this.value;
+      SleepApp.Storage.saveSettings(settings);
+      init();
+      render();
+    });
   }
 
   function show() {
+    document.getElementById('calViewCalendarToggle').value = getCalendar();
     render();
     document.getElementById('mainView').classList.add('hidden');
     document.getElementById('calendarView').classList.remove('hidden');
