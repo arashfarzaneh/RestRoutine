@@ -9,7 +9,7 @@ An elegant, privacy-first, client-side sleep tracker and routine optimizer. It f
 
 ## 🎨 Visual Preview
 
-![RestRoutine Dashboard](assets/screenshot_collage.png)
+![RestRoutine Dashboard](assets/screenshot_collage.jpg)
 
 ---
 
